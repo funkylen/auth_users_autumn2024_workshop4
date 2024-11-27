@@ -1,5 +1,25 @@
 {% extends 'base.html' %}
 
 {% block content %}
-    Users
+    <a href="{% url 'users.create' %}" class="btn btn-outline-primary">Create user</a>
+    <table class="table">
+        <thead>
+        <tr>
+            <td>id</td>
+            <td>username</td>
+            <td>email</td>
+            <td>password</td>
+        </tr>
+        </thead>
+        <tbody>
+        {% for user in users %}
+            <tr>
+                <td>{{ user.id }}</td>
+                <td>{{ user.username }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.password }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 {% endblock %}

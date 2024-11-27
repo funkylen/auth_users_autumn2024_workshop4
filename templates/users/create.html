@@ -4,7 +4,8 @@
 {% block content %}
     <div class="row">
         <div class="col-5">
-            <form action="{% url 'login' %}" method="POST">
+            <form action="{% url 'users.create' %}" method="POST">
+                {% csrf_token %}
                 {% bootstrap_form form %}
 
                 {% buttons %}
